@@ -11,5 +11,7 @@ public class Unreal_EffectiveCPPEditorTarget : TargetRules
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;
 		ExtraModuleNames.Add("Unreal_EffectiveCPP");
+
+		// bPreprocessOnly = true;
 	}
 }
