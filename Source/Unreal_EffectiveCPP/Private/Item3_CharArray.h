@@ -11,6 +11,7 @@ class Item3_CharArray
 {
 public:
 	Item3_CharArray();
+	Item3_CharArray(TCHAR InString[100]);
 	~Item3_CharArray();
 
 	FORCEINLINE TCHAR& operator[](int idx);
@@ -26,6 +27,7 @@ FORCEINLINE TCHAR& Item3_CharArray::operator[](int idx)
 	// 코드의 중복이나 유지보수 관련 향상
 	return const_cast<TCHAR&>(static_cast<const Item3_CharArray>(*this)[idx]);
 }
+
 
 FORCEINLINE const TCHAR& Item3_CharArray::operator[](int idx) const
 {

@@ -3,6 +3,7 @@
 
 #include "Item3.h"
 #include "Item3_CustomVector.h"
+#include "Item3_CharArray.h"
 
 // Sets default values
 AItem3::AItem3()
@@ -68,6 +69,15 @@ void AItem3::BeginPlay()
 
 	cv.GetX();
 	ccv.GetX();
+
+	TCHAR StringForConstArray[100]{ TEXT("Const Array") };
+	TCHAR StringForNotConstArray[100]{ TEXT("Not Const Array") };
+
+	Item3_CharArray arr(StringForNotConstArray);
+	const Item3_CharArray carr(StringForConstArray);
+
+	UE_LOG(LogTemp, Log, TEXT("char array: %c"), arr[0]);
+	UE_LOG(LogTemp, Log, TEXT("const char array: %c"), carr[0]);
 }
 
 FVector AItem3::GetVector1(int x, int y, int z) const
